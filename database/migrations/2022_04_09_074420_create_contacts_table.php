@@ -16,8 +16,7 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('email',100);
             $table->string('subject',30);
             $table->text('message');
             $table->boolean('record_deleted')->default(0);
